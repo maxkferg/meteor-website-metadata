@@ -1,0 +1,9 @@
+{
+    "name": "website-metadata",
+    "description": "Get metadata from other websites in Meteor",
+    "homepage": "https://github.com/maxkferg/meteor-website-metadata",
+    "author": "Max Ferguson<maxkferg@gmail.com>",
+    "version": "0.0.3",
+    "git": "https://github.com/maxkferg/meteor-website-metadata.git",
+	"packages": {}
+}
