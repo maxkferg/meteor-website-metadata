@@ -8,14 +8,14 @@ metadata = function(){
 				if (metadata){
 					callback(null,metadata);
 				} else {
-					callback({"Unable to parse"},null);
+					callback({error:"Unable to parse"},null);
 				}
 			} else {
 				callback(error,null)
 			}
 		});
 	}
-	this._parse = function(data)
+	this._parse = function(data){
 		var metadata = {};
 		var $ = cheerio.load(data);
 		// Get the title
@@ -24,18 +24,18 @@ metadata = function(){
 		// Add the html links
 		metadata.links = $('a').map(function(link){
 			return {
-				"href":link.attr("href");
-				"title":link.attr("title");
-				"text":link.text();
+				"href":link.attr("href"),
+				"title":link.attr("title"),
+				"text":link.text()
 			}
 		});
 
 		// Add the images
 		metadata.images = $('img').map(function(link){
 			return {
-				"src":link.attr("src");
-				"title":link.attr("title");
-				"alt":link.attr("alt");
+				"src":link.attr("src"),
+				"title":link.attr("title"),
+				"alt":link.attr("alt")
 			}
 		});
 
