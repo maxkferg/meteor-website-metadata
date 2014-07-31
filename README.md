@@ -39,9 +39,9 @@ WebsiteMetadata.get("www.youtube.com",function(error,metadata){
         return;
     }
     var title = metadata.title; // Page title as string
-	var links = metadata.links; // List of {href:"",title:"",text:""}
-	var videos = metadata.videos; // List of {src:"",title:""}
-	var images = metadata.images; // List of {src:"",title:"",alt:""}
+	var links = metadata.links; // List of {href:"",title:""}
+	var videos = metadata.videos; // List of {id:"",link:""}
+	var images = metadata.images; // List of {src:"",alt:""}
 }); 
 ```
 
@@ -50,10 +50,9 @@ Server
 
 ###.get(url)
 
-Same as client method, except is runs synchronously.<br>
+Same as client method, except it runs synchronously.<br>
 Return a single metadata object in the same form as the client method<br>
-Return a object like {error:"Some error description"} on error
-
+Throws a Meteor.Error() on failure
 
 
 
